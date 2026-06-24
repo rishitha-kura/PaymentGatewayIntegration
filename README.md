@@ -1,109 +1,167 @@
-# Payment Gateway Integration (Simulated Sandbox)
+# Payment Gateway Integration
 
-A complete, production-ready full-stack payment gateway integration demo built using **React**, **TypeScript**, **Node.js (Express)**, and **Vite**. This project operates as a beautifully styled storefront and ledger auditing system with a built-in interactive simulator sandbox.
+**Internship ID:** CTTS114
 
----
+A modern full-stack Payment Gateway Integration project built using React, TypeScript, Node.js, Express, and Vite. This application demonstrates a complete payment processing workflow using a simulated payment gateway environment suitable for learning, portfolio projects, and internship submissions.
 
-## 🌟 Key Features
+## 🚀 Live Demo
 
-1.  **Modern Storefront:** Clean and responsive UI featuring card-based product selection, category tags, clear itemized list of features, and smooth animations.
-2.  **Interactive Billing Form:** Secure checkout panel that collects buyer billing information (Name, Email, Phone).
-3.  **Beautiful Sandbox Simulator:** The app features a custom-built, fully responsive checkout simulator that models the complete full-stack flow of creating orders and verifying signatures with successful/failed outcomes out-of-the-box.
-4.  **Verified Success & Failure Screens:** Specialized confirmation templates providing full receipt details, transaction references, and simulation debugging helpers.
-5.  **Interactive Transaction Ledger:** A robust payment log section equipped with status filtering (All, Success, Failed, Pending), searchable index (by Name, Email, Product, Order ID), and accurate timestamps.
+Add your deployed Render URL here after deployment:
 
----
-
-## ⚙️ Backend API Architecture
-
-The backend operates on a custom Express server configured to serve both API routes and compiled React assets on standard ingress port `3000`.
-
-### 1. `GET /api/config`
-Check current demo/simulator status.
-*   **Response:**
-    ```json
-    {
-      "success": true,
-      "hasKeys": false,
-      "keyId": null,
-      "isDemo": true
-    }
-    ```
-
-### 2. `POST /api/create-order`
-Creates a verified checkout order, registering a simulated transaction in the database ledger.
-*   **Payload:**
-    ```json
-    {
-      "amount": 499,
-      "productName": "Frontend Mastery Blueprint",
-      "customerName": "John Doe",
-      "customerEmail": "john@example.com",
-      "customerPhone": "9876543210"
-    }
-    ```
-*   **Response:**
-    ```json
-    {
-      "success": true,
-      "isSimulated": true,
-      "orderId": "order_sim_...",
-      "amount": 49900,
-      "currency": "INR",
-      "keyId": "rzp_test_simulated_key"
-    }
-    ```
-
-### 3. `POST /api/verify-payment`
-Verifies signature authenticity and registers simulated success or failure outcomes in the in-memory log.
-*   **Payload:**
-    ```json
-    {
-      "orderId": "order_sim_...",
-      "paymentId": "pay_sim_...",
-      "signature": "sig_sim_...",
-      "isSimulated": true
-    }
-    ```
-*   **Response:**
-    ```json
-    {
-      "success": true,
-      "message": "Payment verified successfully (Simulated Demo)"
-    }
-    ```
-
-### 4. `GET /api/payments`
-Fetches all recorded payments stored in the backend in-memory ledger. Sorted chronologically (newest first).
+```text
+https://your-render-app.onrender.com
+```
 
 ---
 
-## 🛠️ Setup & Local Deployment
+## ✨ Features
 
-### 1. Prerequisites
-Ensure you have **Node.js (v18+)** installed.
+* Product Selection Dashboard
+* Dynamic Order Summary
+* Billing Details Form
+* Simulated Payment Processing
+* Payment Success & Failure States
+* Transaction History Dashboard
+* Responsive UI Design
+* Full Client-Server Integration
+* Render Deployment Ready
 
-### 2. Build & Run
-Run the standard build commands to compile both the React frontend and bundle the custom Express server:
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Deployment
+
+* GitHub
+* Render
+
+---
+
+## 📂 Project Structure
+
+```text
+payment-gateway-integration/
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   └── App.tsx
+│
+├── server.ts
+├── package.json
+├── vite.config.ts
+└── README.md
+```
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+NODE_ENV=production
+PORT=3000
+```
+
+---
+
+## 🏃 Run Locally
+
+Install dependencies:
 
 ```bash
-# Install dependencies
 npm install
-
-# Build the frontend and backend bundle
-npm run build
-
-# Start the full-stack server
-npm start
 ```
-Your application will be live at `http://localhost:3000`.
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
 
 ---
 
-## 📂 Directory Structure
+## 📦 Production Build
 
-*   `server.ts` - Main Express server configuration, API handlers, and Vite integration.
-*   `src/App.tsx` - Primary storefront controller, Checkout state machines, and Ledger logs views.
-*   `src/types.ts` - Shared TS types, Product specifications, and Transaction schemes.
-*   `src/products.ts` - Product static catalog items.
-*   `package.json` - Build configurations, dependencies, and deployment start commands.
+Build the application:
+
+```bash
+npm run build
+```
+
+Run production server:
+
+```bash
+npm start
+```
+
+---
+
+## ☁️ Render Deployment
+
+### Build Command
+
+```bash
+npm install && npm run build
+```
+
+### Start Command
+
+```bash
+npm start
+```
+
+### Environment Variables
+
+```env
+NODE_ENV=production
+PORT=3000
+```
+
+---
+
+## 🎯 Project Workflow
+
+1. User selects a product/package.
+2. Order summary updates automatically.
+3. User enters billing details.
+4. Payment request is processed through a simulated gateway.
+5. Payment success/failure status is displayed.
+6. Transaction details are recorded and displayed.
+
+---
+
+## 📌 Internship Submission Details
+
+* Project Name: Payment Gateway Integration
+* Internship ID: CTTS114
+* Project Type: Full-Stack Web Application
+* Deployment Platform: Render
+
+---
+
+## 👨‍💻 Author
+
+Rishitha Kura
+
+Internship Project Submission – CTTS114
