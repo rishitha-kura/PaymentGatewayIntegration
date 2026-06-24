@@ -6,7 +6,6 @@ A modern full-stack Payment Gateway Integration project built using React, TypeS
 
 ## 🚀 Live Demo
 
-Add your deployed Render URL here after deployment:
 
 ```text
 https://paymentgatewayintegration-un5k.onrender.com
