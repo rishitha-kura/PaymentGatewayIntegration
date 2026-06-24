@@ -9,7 +9,7 @@ A modern full-stack Payment Gateway Integration project built using React, TypeS
 Add your deployed Render URL here after deployment:
 
 ```text
-https://your-render-app.onrender.com
+https://paymentgatewayintegration-un5k.onrender.com
 ```
 
 ---
